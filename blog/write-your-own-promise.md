@@ -1,3 +1,5 @@
+# 从零开始写一个 Promise 库
+
 > 原文：[Write Your Own Node.js Promise Library from Scratch](http://thecodebarbarian.com/write-your-own-node-js-promise-library-from-scratch.html)
 >
 > 作者：[code_barbarian](https://twitter.com/code_barbarian)
