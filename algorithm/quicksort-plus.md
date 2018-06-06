@@ -20,7 +20,8 @@ void quicksort(Item a[], int l, int r) {
 
 ### Js
 
-```javascript qsort.js
+```javascript
+// qsort.js
 var sort = require('./sort.js');
 var coch = sort.compexch;
 
@@ -95,7 +96,8 @@ sort.check(a, 0, N-1);
 
 ### sort.js
 
-```javascript sort.js
+```javascript
+// sort.js
 exports.check = function(a, l, r) {
   var ck = 1;
   for (var i = l; i < r; i++) {
