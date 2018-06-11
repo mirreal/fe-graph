@@ -17,6 +17,7 @@
     * [BFC](skill/bfc.md)
     * [事件循环](skill/event-loop.md)
     * [获取自定义全局变量](skill/global-variables-javascript.md)
+    * [颜色格式转换 rgb -> hex ](skill/rgb-color-2-hex.md)
     * [页面间 post 传参](skill/post-request.md)
     * [函数重载](skill/overload.md)
     * [Tree shaking](skill/tree-shaking.md)
@@ -40,4 +41,6 @@
 * [git](git/README.md)
     * [重写提交信息](git/rewrite-commit-message.md)
     * [http 记住密码](git/http-password-cache.md)
+* [拾遗](pearl/README.md)
+    * [拾遗](pearl/README.md)
 
