@@ -30,6 +30,7 @@
     * [三路快排和选择](algorithm/3-way-quicksort.md)
     * [裴波那契](algorithm/fibonacci.md)
 * [ECMAScript](es/README.md)
+    * [原型](es/prototype.md)
     * [Object.is](es/object-is.md)
 * [ES6+](es6/README.md)
     * [ES6 Modules](es6/es6-modules.md)
