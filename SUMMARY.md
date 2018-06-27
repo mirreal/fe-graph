@@ -4,6 +4,7 @@
 * [文章](blog/README.md)
     * [从零开始写一个 Promise 库](blog/write-your-own-promise.md)
     * [React 整洁代码最佳实践](blog/clean-code-react-best-practices.md)
+    * [在 web 使用 JavaScript 模块](blog/using-javascript-modules-on-the-web.md)
 * [聚沙成塔](skill/README.md)
     * [Node.js](skill/node/README.md)
         * [包管理器](skill/node/package-manager.md)
