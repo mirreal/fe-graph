@@ -1,4 +1,4 @@
-# 在 web 使用 JavaScript 模块
+# 在 web 上使用 JavaScript 模块
 
 > 原文：[Using JavaScript modules on the web](https://developers.google.com/web/fundamentals/primers/modules)
 
@@ -96,11 +96,11 @@ import shout from './lib.mjs';
 
 ### 关于文件扩展名的说明
 
-可能已经注意到我们正在使用 `.mjs` 作为模块的文件扩展名。在 Web 上，文件扩展名无关紧要，只要该文件是[ JavaScript MIME 类型提供的 `text/javascript`](https://html.spec.whatwg.org/multipage/scripting.html#scriptingLanguages:javascript-mime-type)。从 script 元素的 `type` 属性，浏览器就能知道它是一个模块。
+可能已经注意到我们正在使用 `.mjs` 作为模块的文件扩展名。在 Web 上，文件扩展名无关紧要，只要该文件是[ JavaScript MIME 类型 `text/javascript`](https://html.spec.whatwg.org/multipage/scripting.html#scriptingLanguages:javascript-mime-type)。从 script 元素的 `type` 属性，浏览器就能知道它是一个模块。
 
 不过，我们建议在模块使用 `.mjs` 扩展名，原因有两个：
 
-1. 在开发过程中，它清楚地表明该文件是一个模块，而不是一个普通的脚本。如前所述，模块的处理方式与普通脚本不同，因为必须通过某种方式表明其差异。
+1. 在开发过程中，它清楚地表明该文件是一个模块，而不是一个普通的脚本。如前所述，模块的处理方式与普通脚本不同，因此必须通过某种方式表明其差异。
 2. 与 Node.js 保持一致，[模块实现的实验版本](https://nodejs.org/api/esm.html)目前只支持带 `.mjs` 扩展名的文件。
 
 **注意：**在 Web 上部署 `.mjs` ，需要在 Web 服务器将此扩展名配置成 `Content-Type: text/javascript`。另外，你可能还希望配置编辑器将 `.mjs` 文件视为 `.js` 文件来获得语法高亮显示，事实上大多数现代编辑已经默认这样做了。
@@ -170,7 +170,7 @@ import {shout} from 'https://simple.example/modules/lib.mjs';
 
 另一个与模块相关的新特性是 `import.meta`，提供有关当前模块的元数据。元数据不是 ECMAScript 规范的一部分，这取决于宿主环境，比如在浏览器中跟在 Node.js 中可能会获得与不同的元数据。
 
-这是一个在 web 上使用 `import.meta` 的例子。默认情况下，图像时相对于当前 URL 加载，使用 `import.meta.url` 使它可以相对于当前模块路径加载。
+这是一个在 web 上使用 `import.meta` 的例子。默认情况下，图像是相对于当前 URL 加载，使用 `import.meta.url` 使它可以相对于当前模块路径加载。
 
 ```js
 function loadThumbnail(relativePath) {
@@ -199,7 +199,7 @@ container.append(thumbnail);
 
 其中一个原因是静态 `import`/ `export` 语法是静态可分析的，因此打包工具优可以通过消除未使用的导出优化代码。静态 `import` 和 `export` 不仅仅是语法，它们是一个非常关键的特性。
 
-**成功：****我们的一般建议是在模块部署到生产之前继续使用打包工具。**在某种程度上，打包是一种压缩代码的优化方式，会带来性能上的好处，因为最终将传输更少的代码。
+**注意：****我们的一般建议是在模块部署到生产之前继续使用打包工具。**在某种程度上，打包是一种压缩代码的优化方式，会带来性能上的好处，因为最终将传输更少的代码。
 
 当然，[DevTools 的代码覆盖功能](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)可以帮助确定是否有将不必要的代码推送给用户。我们还建议使用[代码拆分](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching#lazy-loading)来拆分包，并延迟加载非关键路径的脚本。
 
@@ -264,7 +264,7 @@ import { pluck } from './pluck.mjs';
 
 ### 使用 HTTP/2
 
-如果可能的话，使用 HTTP/2 是一个很好的性能建议，比如仅仅是为了[多路复用支持](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing)。通过 HTTP/2 多路复用，多个请求和响应消息可以同时在运行，这对加载模块树很有帮助。
+如果可能的话，使用 HTTP/2 是一个很好的性能建议，比如仅仅是为了[支持多路复用](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing)。通过 HTTP/2 多路复用，多个请求和响应消息可以同时在运行，这对加载模块树很有帮助。
 
 Chrome 团队调研了另一个 HTTP/2 的功能，[HTTP/2 服务器推送功能](https://developers.google.com/web/fundamentals/performance/http2/#server_push)是否可以成为部署高度模块化应用程序的实用解决方案。但是，[HTTP/2 服务器推送还有很多问题](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/)，Web 服务器和浏览器的实现目前还没有针对高度模块化的 Web 应用进行优化。比如，很难只推送用户尚未缓存的资源，解决这个问题的一种方式是将源的整个缓存状态传达服务器，但这会带来隐私风险。
 
@@ -356,7 +356,7 @@ Chrome 已经支持提案（[`SignedExchanges`](https://wicg.github.io/webpackag
 ></script>
 ```
 
-这个 `<script>` 元素可以从浏览器的内置 Layered API（`std:virtual-scroller`）或是指向polyfill 的 fallback URL 加载 `virtual-scroller` API 。然后就可以创建[一个自定义 `<virtual-scroller>` 元素](https://www.chromestatus.com/feature/5673195159945216)，如下：
+这个 `<script>` 元素可以从浏览器的内置 Layered API（`std:virtual-scroller`）或是指向 polyfill 的 fallback URL 加载 `virtual-scroller` API 。然后就可以创建[一个自定义 `<virtual-scroller>` 元素](https://www.chromestatus.com/feature/5673195159945216)，如下：
 
 ```html
 <virtual-scroller>
