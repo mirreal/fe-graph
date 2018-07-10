@@ -1,0 +1,25 @@
+{
+  "name": "graph",
+  "version": "0.1.0",
+  "description": "graph",
+  "main": "index.js",
+  "scripts": {
+    "start": "gitbook init && gitbook serve",
+    "blog": "node _tool/blog.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirreal/graph.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mirreal/graph/issues"
+  },
+  "homepage": "https://github.com/mirreal/graph#readme",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "markdown": "^0.5.0"
+  }
+}
