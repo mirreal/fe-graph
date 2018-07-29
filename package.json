@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gitbook init && gitbook serve",
-    "blog": "node _tool/blog.js"
+    "blog": "node scripts/blog/"
   },
   "repository": {
     "type": "git",
