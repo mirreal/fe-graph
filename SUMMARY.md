@@ -35,6 +35,7 @@
     * [基于 OS X 开发指南](skill/osx-develop.md)
     * [OS X 小技巧](skill/osx-tips.md)
     * [基于 Windows 开发指南](skill/windows-develop.md)
+    * [Web Tools](skill/web-tools.md)
     * [Service Worker](skill/service-worker.md)
     * [vim](skill/vim.md)
     * [shell](skill/shell.md)
